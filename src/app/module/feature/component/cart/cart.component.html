@@ -1,1 +1,25 @@
-<p>cart works!</p>
+<main class="mt-20">
+
+    <div class="py-10 lg:grid grid-cols-3 lg:px-16 relative">
+
+        <section class="lg:col-span-2 lg:px-5">
+
+            <div class="box p-5 space-y-3">
+
+                <ng-container *ngIf="cart">
+
+                    <div *ngFor="let product of cart;let last=last">
+
+                        <app-cart-item/>
+
+                    </div>
+
+                </ng-container>
+
+
+            </div>
+
+        </section>
+    </div>
+    
+</main>

@@ -7,6 +7,7 @@ import { MatProgressBarModule} from '@angular/material/progress-bar'
 import { sareePage1 } from '../../../../../Data/Saree/page1';
 import { ProductCardComponent } from '../../../shared/component/product-card/product-card.component';
 import { StarRatingComponent } from '../../../shared/component/star-rating/star-rating.component';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,11 +23,15 @@ export class ProductDetailsComponent {
   reviews=[1,1,1];
   relatedProducts:any;
 
+  constructor(private router:Router){
+
+  }
+
   ngOnInit(){
     this.relatedProducts=sareePage1;
   }
 
   handleAddToCart(){
-    
+    this.router.navigate(['cart']);
   }
 }
