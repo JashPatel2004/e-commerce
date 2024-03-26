@@ -1,0 +1,26 @@
+<div class="grid grid-cols-1 gap-4 lg:grid-cols-12 px-5 lg:px-20">
+
+    <div class="col-span-1 lg:col-span-5">
+
+        <div class="rounded-md shadow-md h-[32.2rem] overflow-y-scroll hide-scrollbar box py-5">
+
+            <div class="p-5 py-7 cursor-pointer">
+
+                <div *ngFor="let item of addresses;let last=last" class="py-2 space-y-2">
+
+                    <app-address-card [address]="item"/>
+
+                    <button style="padding: 1.6rem;" mat-raised-button class="bg-blue-600 text-white"
+                     (click)="handleCreateOrder(item)">Deliver Here</button>
+
+                     <mat-divider *ngIf="!last"></mat-divider>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

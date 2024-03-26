@@ -1,5 +1,4 @@
 <div class="p-5 shadow-lg">
-
     <div class="flex items-center">
 
         <div class="w-[5rem] h-[5rem] lg:w-[9rem] lg:h-[9rem]">
@@ -15,10 +14,10 @@
             <p class="text-gray-500">Size: M, Olive Green</p>
             <p class="text-gray-500 mt-2">Seller: JP Trendz</p>
 
-            <div class="space-x-2 items-center pt-3">
+            <div class="flex space-x-2 items-center pt-3">
                 <p class="text-gray-500 line-through">₹1499</p>
                 <p class="font-semibold text-lg">₹265</p>
-                <p class="to-green-600 font-semibold">82% off</p>
+                <p class="text-green-600 font-semibold">82% off</p>
 
             </div>
 
@@ -26,4 +25,33 @@
 
     </div>
 
+    <div class="flex items-center lg:space-x-10 pt-4 justify-between">
+        <div class="flex items-center space-x-2">
+            <div class="example-button-container">
+                <button mat-mini-fab (click)="updateCartItem(-1)" [disabled]="true" class="text-white bg-blue-600 rounded">
+                    <mat-icon>remove</mat-icon>
+                </button>
+    
+            </div>
+    
+            <span class="py-1 px-7 border border-gray-800 rounded-sm">
+                1
+            </span>
+    
+            <div class="example-button-container">
+                <button mat-mini-fab (click)="updateCartItem(1)" [disabled]="false" class="text-white bg-blue-600 rounded">
+                    <mat-icon>add</mat-icon>
+                </button>
+    
+            </div>
+            
+           
+    
+        </div>
+        <button mat-stroked-button (click)="removeCartItem()" class="text-white bg-blue-600 p-1 rounded">Remove</button>
+    
+    </div>
+
 </div>
+
+
