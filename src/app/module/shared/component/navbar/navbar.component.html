@@ -50,7 +50,7 @@
                     </button>
                     <mat-menu #profileMenu="matMenu">
                         <button mat-menu-item>Profile</button>
-                        <button mat-menu-item>Orders</button>
+                        <button (click)="navigateTo('/account/orders')" mat-menu-item>Orders</button>
                         <button mat-menu-item>Logout</button>
                     </mat-menu>
 

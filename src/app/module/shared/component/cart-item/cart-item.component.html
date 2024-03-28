@@ -25,7 +25,7 @@
 
     </div>
 
-    <div class="flex items-center lg:space-x-10 pt-4 justify-between">
+    <div *ngIf="showButton" class="flex items-center lg:space-x-10 pt-4 justify-between">
         <div class="flex items-center space-x-2">
             <div class="example-button-container">
                 <button mat-mini-fab (click)="updateCartItem(-1)" [disabled]="true" class="text-white bg-blue-600 rounded">

@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon'
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
@@ -23,8 +24,10 @@ export class NavbarComponent {
 isNavbarContentOpen: any;
 currentSection: any;
 
-navigateTo(path:any) {
+constructor(private router:Router){}
 
+navigateTo(path:any) {
+    this.router.navigate([path])
 }
 
 openNavbarContent(section:any) {
