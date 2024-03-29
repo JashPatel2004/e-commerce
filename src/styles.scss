@@ -1,4 +1,4 @@
-@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import "@angular/material/prebuilt-themes/indigo-pink";
 
 @tailwind base;
 @tailwind components;
@@ -9,7 +9,7 @@ body{
     font-family: Roboto, Arial , sans-serif;
     // background: #0b0b0b;
     // color: white;
-    background: #f1f2f4;
+    background:#F1F2F4;
     color: black;
 }
 
@@ -21,4 +21,13 @@ body{
 
 .hideScrollbar::-webkit-scrollbar{
     display: none;
+}
+
+.matBgColor{
+    background-color:#2874F0;
+}
+
+.textGray{
+    color: #878787;
+    font-size: 14px;
 }

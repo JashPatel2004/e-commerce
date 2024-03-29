@@ -1,4 +1,4 @@
-export const women_jeans=[
+export const womenJeans=[
     {
         "imageUrl": "https://rukminim1.flixcart.com/image/612/612/kggviq80-0/jean/d/j/v/30-xj-37-gry-30-zxn-clothing-original-imafwp9gnqtwwebg.jpeg?q=70",
         "brand": "A C CREATION",

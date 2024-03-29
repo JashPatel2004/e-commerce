@@ -1,0 +1,57 @@
+<div class="p-5 box">
+
+    <div class="flex items-center">
+
+        <div class="w-[5rem] h-[5rem] lg:w-[9rem] lg:h-[9rem]">
+
+            <img class="w-full h-full object-cover object-top"
+                src="https://rukminim1.flixcart.com/image/612/612/kw5ag7k0/kurta/f/j/g/xxl-sg1011-sanganeri-feb-original-imag8w9xbbakjkju.jpeg?q=70"
+                alt="">
+
+        </div>
+
+        <div class="ml-5 space-y-1">
+            <p class="font-medium text-[16px]">Houndstooth Rayon Blend Stitched Anarkali Gown</p>
+            <p class="textGray">Size: M | Color: Black</p>
+            <p class="textGray">Seller : Brand</p>
+
+            <div class="flex space-x-2 items-center pt-3">
+
+                <p class="textGray line-through textGray-[14px]">₹1399</p>
+                <p class="font-medium text-[18px]">₹599</p>
+                <p class="text-[#388e3c] font-medium text-[14px]">40%</p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="showButton" class="flex items-center lg:space-x-10 pt-4 justify-between">
+
+        <div class="flex items-center space-x-2 ">
+    
+            <div class="example-button-container">
+    
+                <button class="roundedButton hover:scale-105" (click)="updateCartItem(-1)" [disabled]="true"><mat-icon>remove</mat-icon></button>
+    
+            </div>
+    
+            <span class="py-1 px-7 border border-[#c2c2c2] rounded-sm">1</span>
+    
+            <div class="example-button-container">
+    
+                <button class="roundedButton hover:scale-105" (click)="updateCartItem(1)" [disabled]="false">
+    
+                    <mat-icon>add</mat-icon>
+    
+                </button>
+    
+            </div>
+    
+        </div>
+    
+        <button class="hover:scale-110" mat-stroked-button (click)="removeCartItem()">Remove</button>
+    
+    </div>
+</div>
+

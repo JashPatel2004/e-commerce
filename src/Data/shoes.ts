@@ -22,7 +22,7 @@ export const mensShoesPage1=[
     {
         "imageUrl": "https://rukminim1.flixcart.com/image/612/612/kqidx8w0/shoe/i/4/n/6-brd-406-300-blue-6-birde-blue-original-imag4g8cmfkfzkjg.jpeg?q=70",
         "brand": "BIRDE",
-        "title": "Combo Pack of 2 Sports Shoes Running Shoes For Men",
+        "title": "Combo Pack of 2 Sports Shoes Running Shoes",
         "color": "",
         "selling_price": "₹499",
         "price": "₹998",
@@ -42,7 +42,7 @@ export const mensShoesPage1=[
     {
         "imageUrl": "https://rukminim1.flixcart.com/image/612/612/l4rd0280/shoe/m/d/e/6-rk-494-grey-orange-40-bruton-grey-orange-original-imagfha9ssgydnef.jpeg?q=70",
         "brand": "BRUTON",
-        "title": "Sports shoes for men | Latest Stylish Casual for men |r...",
+        "title": "Sports shoes for men | Latest Stylish Casual",
         "color": "",
         "selling_price": "₹249",
         "price": "₹1,299",

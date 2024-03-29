@@ -9,10 +9,7 @@
                 <div *ngFor="let item of addresses;let last=last" class="py-2 space-y-2">
 
                     <app-address-card [address]="item"/>
-
-                    <button style="padding: 1.6rem;" mat-raised-button class="bg-blue-600 text-white rounded"
-                     (click)="handleCreateOrder(item)">Deliver Here</button>
-
+                                  
                      <mat-divider *ngIf="!last"></mat-divider>
 
                 </div>
