@@ -1,4 +1,5 @@
 export const navigation = {
+
       women:{
         id: 'women',
         name: 'Women',
@@ -81,7 +82,7 @@ export const navigation = {
             id: 'clothing',
             name: 'Clothing',
             items: [
-              { name: 'Men Kurtas', id: 'men_kurta' },
+              { name: 'Mens Kurtas', id: 'mens_kurta' },
               { name: 'Shirt', id: 'shirt' },
               { name: 'Men Jeans', id: 'men_jeans' },
               { name: 'Sweaters', id: '#' },
@@ -114,6 +115,5 @@ export const navigation = {
             ],
           },
         ],
-      },
-
+      },  
   }

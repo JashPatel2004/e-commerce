@@ -16,7 +16,7 @@ orderFilter=[
   {value:"on_the_way" , label:"On The Way"},
   {value:"delivered" , label:"Delivered"},
   {value:"cancelled" , label:"Cancelled"},
-  {value:"returend" , label:"Returend"},
+  {value:"returned" , label:"Returned"},
 ]
 orders = [[1,1,1,1]]
 

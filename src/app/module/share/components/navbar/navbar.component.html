@@ -1,15 +1,15 @@
-<div class="fixed top-0 z-50 right-0 left-0 bg-[#2874F0] text-[#ffffff]">
+<div class="fixed top-0 z-50 right-0 left-0 text-white bg-blue-600">
     <!-- bg-[#69f0ae] -->
 
     <!-- Navbar -->
-    <div  class="lg:px-20 px-5 h-16  flex items-center justify-between">
+    <div class="lg:px-20 px-5 h-16  flex items-center justify-between">
 
         <!-- Right Side Content -->
         <div class="flex items-center">
 
             <!-- Logo -->
             <div class="mr-5">
-                <a routerLink="/">
+                <a>
                     <img class="w-8"
                         src="https://yt3.googleusercontent.com/cT40lDWqE99Ch52R3ftuAExjmjF-yZiY5rUSv_0Q3NXhcqzmiax8ReXuS4Qe53Fizcaw4hEX=s176-c-k-c0x00ffffff-no-rj"
                         alt="appLogo">
@@ -19,13 +19,15 @@
             <div>
 
                 <div class="flex space-x-4 items-center">
-                    <a routerLink="/"
-                        class="hover:scale-110 cursor-pointer font-bold-00 text-lg">Home</a>
+                    <a routerLink="/" class="hover:scale-110 cursor-pointer font-bold-00 text-lg">Home</a>
                     <button
-                        class="hover:scale-110 cursor-pointer open-button font-bold-700 text-lg"
-                        (click)="openNavbarContent('men')" mat-mdc-button>Men</button>
-                    <button class="hover:scale-110 cursor-pointer open-button font-bold-700 text-lg"
+                        class="group focus:outline-none focus:scale-110 focus:text-[#2874F0] hover:text-[#2874F0] hover:scale-110 cursor-pointer font-bold-700 text-lg open-button"
+                        (click)="openNavbarContent('men')"
+                         mat-mdc-button>Men</button>
+                    <button
+                        class="group focus:outline-none focus:scale-110 focus:text-[#2874F0] hover:text-[#2874F0] hover:scale-110 cursor-pointer font-bold-700 text-lg open-button"
                         (click)="openNavbarContent('women')" mat-mdc-button>Women</button>
+
                 </div>
 
             </div>
@@ -50,7 +52,7 @@
                     </button>
                     <mat-menu #profileMenu="matMenu">
                         <button mat-menu-item>Profile</button>
-                        <button (click)="navigateTo('/account/orders')" mat-menu-item>Orders</button>
+                        <button mat-menu-item (click)="navigateTo('account/orders')">Orders</button>
                         <button mat-menu-item>Logout</button>
                     </mat-menu>
 
@@ -61,6 +63,7 @@
 
     </div>
 
+    
     <!-- Navbar Content -->
     <div class="absolute right-0 left-0 modal-container" *ngIf="isNavbarContentOpen">
         <app-nav-content [selectedSection]="currentSection" />

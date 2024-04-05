@@ -1,5 +1,5 @@
+import { Component,Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Component,Input } from '@angular/core';
 import { navigation } from './nav-content';
 
 @Component({
@@ -10,11 +10,11 @@ import { navigation } from './nav-content';
   styleUrl: './nav-content.component.scss'
 })
 export class NavContentComponent {
+category: any;
+@Input() selectedSection: any;
 
-   category:any
-  @Input() selectedSection:any
+ngOnInit(){
+  this.category = navigation;
+}
 
-  ngOnInit(){
-    this.category=navigation;
-  }
 }

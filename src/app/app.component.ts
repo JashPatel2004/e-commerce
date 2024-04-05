@@ -9,8 +9,8 @@ import { ProductsComponent } from "./module/feature/components/products/products
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, HomeComponent, FooterComponent, ProductsComponent,NavbarComponent]
+    imports: [RouterOutlet, HomeComponent, NavbarComponent, FooterComponent, ProductsComponent]
 })
 export class AppComponent {
-  title = 'e-commerce';
+  title = 'eccomerce-angular';
 }
