@@ -1,6 +1,6 @@
-<div class="p-5 lg:p-10 mt-10">
+<div class="p-5 lg:p-10">
 
-    <p class="text-gray-500 py-10">product/clothes/women/dress</p>
+    <p class="text-gray-500 py-5 text-[20px]">{{product.category.parentCategory.parentCategory.name+'  /  '+product.category.parentCategory.name+'  /  '+product.category.name+'  /  '+product.brand}}</p>
 
     <!-- Details Section -->
     <section class="lg:grid grid-cols-3 lg:gap-10">
@@ -8,7 +8,7 @@
         <!-- Image -->
         <div class="col-span-2 flex flex-col items-center">
 
-            <img src="https://rukminim1.flixcart.com/image/612/612/kw5ag7k0/kurta/f/j/g/xxl-sg1011-sanganeri-feb-original-imag8w9xbbakjkju.jpeg?q=70"
+            <img [src]="product.imageUrl"
                 alt="">
 
         </div>
@@ -21,8 +21,8 @@
 
                 <div>
 
-                    <p class="font-semibold text-gray-600 text-lg">Brand</p>
-                    <p class="text-xl">Houndstooth Rayon Blend Stitched Anarkali Gown</p>
+                    <p class="font-semibold text-gray-600 text-lg">{{product.brand}}</p>
+                    <p class="text-xl">{{product.title}}</p>
 
                 </div>
 
@@ -31,9 +31,9 @@
             <!-- Pricing -->
             <div class="flex items-center space-x-5">
 
-                <p class="text-lg font-semibold">₹399</p>
-                <p class="text-lg text-gray-500 line-through">₹599</p>
-                <p class="font-semibold text-lg text-green-500">40%</p>
+                <p class="text-lg font-semibold">₹{{product.discountedPrice}}</p>
+                <p class="text-lg text-gray-500 line-through">₹{{product.price}}</p>
+                <p class="font-semibold text-lg text-green-500">{{product.discountPercent}}%</p>
 
             </div>
 
@@ -60,13 +60,11 @@
             <!-- Discription -->
             <div>
 
+                <p class="text-gray-600">{{product.description}}</p>
+<!-- 
                 <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio voluptatum quod
                     magnam, est iure, corporis et aliquid nobis molestias aperiam maiores aut tenetur accusamus delectus
-                    soluta? Eum rem error officia.</p>
-
-                <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio voluptatum quod
-                    magnam, est iure, corporis et aliquid nobis molestias aperiam maiores aut tenetur accusamus delectus
-                    soluta? Eum rem error officia.</p>
+                    soluta? Eum rem error officia.</p> -->
 
             </div>
 
@@ -109,7 +107,7 @@
                                 <div class="grid grid-cols-12 justify-around items-center">
 
                                     <div class="col-span-2">
-                                        <span>Excelent</span>
+                                        <span>Excellent</span>
                                     </div>
 
                                     <div class="col-span-8 px-4">

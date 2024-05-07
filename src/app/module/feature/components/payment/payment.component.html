@@ -3,7 +3,7 @@
     <ng-container>
 
         <div class="p-5 shadow-lg box mb-5 bg-white">
-            <app-address-card/>
+            <app-address-card [address]="products.shippingAddress"/>
         </div>
 
         <div class="grid grid-cols-1 gap-5 lg:grid-cols-3 relative justify-between py-5">
@@ -15,8 +15,8 @@
     
                     <ng-container>
     
-                        <div *ngFor="let product of products; let last=last">
-                            <app-cart-item [showButton]="false"/>
+                        <div *ngFor="let product of products.orderItems; let last=last">
+                            <app-cart-item [cartItem]="product"/>
                        
                         </div>
     

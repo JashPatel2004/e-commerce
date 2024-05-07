@@ -3,6 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../../../../State/Cart/cart.service';
 
 @Component({
   selector: 'app-cart-item',
@@ -12,14 +13,30 @@ import { CommonModule } from '@angular/common';
   styleUrl: './cart-item.component.scss'
 })
 export class CartItemComponent {
-  @Input() showButton: any;
+
+  @Input() cartItem: any;
+
+  constructor(
+    private cartService:CartService,
+  ){}
+  
   removeCartItem() {
     throw new
       Error('Method not implemented.');
   }
 
-  updateCartItem(arg0: number) {
-    throw new Error('Method not implemented.');
+  updateCartItem(count : number) {
+  console.log("count" , count);
+  console.log("after" , count+this.cartItem.quantity);
+  
+    this.cartService.updateCartItem({
+      cartItemId : this.cartItem.id,
+      data : {quantity : count+this.cartItem.quantity} 
+    }).subscribe((data)=>{
+      console.log("data",data);
+      
+      this.cartItem = data
+    })
   }
 
 }

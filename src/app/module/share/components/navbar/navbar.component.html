@@ -38,14 +38,14 @@
                 <mat-icon>shopping_cart</mat-icon>
             </button>
             <!-- If Else -->
-            <button class="font-bold-700 text-lg hover:scale-110 cursor-pointer" (click)="navigateTo('login')"
-                *ngIf="false" mat-raised-button> LOGIN
+            <button class="font-bold-700 text-lg hover:scale-110 cursor-pointer" (click)="handleOpenLoginModel()"
+                *ngIf="!userProfile" mat-raised-button> LOGIN
             </button>
-            <div *ngIf="true" class="ml-3 flex items-center">
+            <div *ngIf="userProfile" class="ml-3 flex items-center">
 
                 <div class="flex items-center justify-between">
 
-                    <span class="open-button font-bold-700 text-lg">Jash</span>
+                    <span class="open-button font-bold-700 text-lg">{{userProfile.firstName}}</span>
                     <button mat-button [matMenuTriggerFor]="profileMenu">
                         <img class="h-5 w-5 hover:scale-110 cursor-pointer"
                             src="https://cdn.pixabay.com/photo/2013/07/12/14/36/man-148582_1280.png" alt="">
@@ -53,7 +53,7 @@
                     <mat-menu #profileMenu="matMenu">
                         <button mat-menu-item>Profile</button>
                         <button mat-menu-item (click)="navigateTo('account/orders')">Orders</button>
-                        <button mat-menu-item>Logout</button>
+                        <button mat-menu-item (click)="handleLogout()">Logout</button>
                     </mat-menu>
 
                 </div>

@@ -7,10 +7,10 @@
 
             <div class="box p-5 space-y-3 bg-white">
 
-                <ng-container *ngIf="cart">
+                <ng-container *ngIf="cartItems">
 
-                    <div *ngFor="let product of cart; let last=last">
-                        <app-cart-item [showButton]="true"/>
+                    <div *ngFor="let product of cartItems; let last=last">
+                        <app-cart-item [cartItem]="product"/>
                         <!-- <mat-divider *ngIf="!last"></mat-divider> -->
                     </div>
 
@@ -23,7 +23,7 @@
         <!-- Right Side -->
         <section class="px-5 sticky top-0 h-[100vh] mt-5 lg:mt-0 ">
 
-            <ng-container *ngIf="cart">
+            <ng-container *ngIf="cartItems">
 
                 <div class="box bg-white">
 

@@ -2,9 +2,9 @@
 
     <div class="py-1">
 
-        <p class="font-medium">Jash Patel</p>
-        <p class="textGray">Vadodara, Gujarat</p>
-        <p>+91 9313269631</p>
+        <p class="font-medium">{{address.firstName + ' ' + address.lastName}}</p>
+        <p class="textGray">{{address.city + ', ' + address.state}}</p>
+        <p>{{"+91" + address.mobile}}</p>
 
     </div>
 

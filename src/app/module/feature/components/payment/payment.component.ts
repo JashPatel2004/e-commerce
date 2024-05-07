@@ -3,6 +3,9 @@ import { AddressCardComponent } from "../../../share/components/address-card/add
 import { CommonModule } from '@angular/common';
 import { CartItemComponent } from "../../../share/components/cart-item/cart-item.component";
 import {MatDividerModule} from '@angular/material/divider';
+import { ActivatedRoute } from '@angular/router';
+import { OrderService } from '../../../../State/Order/order.service';
+
 
 @Component({
     selector: 'app-payment',
@@ -17,6 +20,25 @@ import {MatDividerModule} from '@angular/material/divider';
     ]
 })
 export class PaymentComponent {
-products = [1,1,1]
+products:any
+
+constructor(
+    private activatedRoute : ActivatedRoute,
+    private orderService : OrderService
+){}
+
+ngOnInit(){
+    let id = this.activatedRoute.snapshot.paramMap.get("id")
+    console.log("id" , id);
+    if(id){
+        this.orderService.getOrderById(id).subscribe((response)=>{
+            // console.log("response",response);
+            this.products = response
+            
+        });
+    }
+   
+    
+}
 
 }
