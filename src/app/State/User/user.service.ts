@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Store } from "@ngrx/store";
 import { catchError, map, of } from "rxjs";
 import { response } from "express";
-import { getUserProfileFailure } from "./user.action";
+import { getUserProfileFailure, getUserProfileSuccess } from "./user.action";
 // import { logoutSuccess, userFailure, userSuccess } from "./user.action";
 
 
@@ -18,18 +18,18 @@ export class UserService{
     headers:any;
     
 
-    constructor(private store:Store){
+    constructor(private store:Store,private http:HttpClient){
         if(typeof localStorage !== 'undefined'){
             this.headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("jwt")}`)
         }
         
     }
 
-    getUserProfile(http:HttpClient){
-        return http.get(`${this.apiUrl}/profile`,{headers:this.headers})
+    getUserProfile(){
+        return this.http.get(`${this.apiUrl}/profile`,{headers:this.headers})
         .pipe(
             map((userProfile:any)=>{
-                return userProfile
+                return getUserProfileSuccess({userProfile:userProfile})
             }),
             catchError((error)=>{
                 console.log("error",error)
@@ -41,9 +41,8 @@ export class UserService{
                     )
                 )
             })
-        )
+        ).subscribe((action)=>{
+            this.store.dispatch(action)
+        })
     }
-
-
-
 }
