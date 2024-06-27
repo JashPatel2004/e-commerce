@@ -4,6 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { map, catchError, of } from "rxjs";
 import { loginSuccess, loginFailure, registerSuccess, registerFailure } from "./auth.actions";
 import { Store } from "@ngrx/store";
+import { UserService } from "../User/user.service";
 
 
 
@@ -15,7 +16,7 @@ export class AuthService {
 
     private apiUrl = BASE_API_URL + '/auth';
 
-    constructor(private store: Store,private http:HttpClient) { }
+    constructor(private store: Store,private http:HttpClient,private userservice:UserService) { }
 
     login(logindata: any) {
         return this.http.post(`${this.apiUrl}/signin`, logindata)
@@ -23,6 +24,7 @@ export class AuthService {
                 map((user: any) => {
                     if (user.jwt) {
                         localStorage.setItem("jwt", user.jwt);
+                        this.userservice.getUserProfile()
                         // console.log(localStorage.getItem("jwt"))
                     }
                     console.log("auth user data",user)

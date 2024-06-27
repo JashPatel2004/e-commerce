@@ -53,12 +53,16 @@ export class NavbarComponent {
     ngOnInit() {
         this.userService.getUserProfile()
 
-        this.store.pipe(
-            select((store)=>store.user)
-        ).subscribe((user)=>{
-            this.userProfile = user.userProfile
-            this.dilouge.closeAll()
+        this.store.select('user').subscribe(user=>{
+            this.userProfile=user.userProfile
         })
+
+        // this.store.pipe(
+        //     select((store)=>store.user)
+        // ).subscribe((user)=>{
+        //     this.userProfile = user.userProfile
+        //     this.dilouge.closeAll()
+        // })
        
     }
 

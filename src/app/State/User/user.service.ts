@@ -19,13 +19,11 @@ export class UserService{
     
 
     constructor(private store:Store,private http:HttpClient){
-        if(typeof localStorage !== 'undefined'){
-            this.headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("jwt")}`)
-        }
         
     }
 
     getUserProfile(){
+        this.headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem("jwt")}`)
         return this.http.get(`${this.apiUrl}/profile`,{headers:this.headers})
         .pipe(
             map((userProfile:any)=>{

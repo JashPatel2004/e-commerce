@@ -21,9 +21,10 @@ export class PaymentSuccessComponent {
   paymentId: any
   order:any;
   orderItems!:any[] ;
-  address:any
+  address:any;
+  status:any
 
-  constructor(private orderService: OrderService, private paymentService: PaymentService, private route: ActivatedRoute, private store: Store<PaymentState>) {}
+  constructor(private orderService: OrderService, private paymentService: PaymentService, private route: ActivatedRoute, private store: Store<AppState>) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -33,18 +34,19 @@ export class PaymentSuccessComponent {
 
     console.log("order id" , this.orderId);
     
-    this.orderService.getOrderById(this.orderId)
+    // this.orderService.getOrderById(this.orderId)
     this.paymentService.updatePayment({
       orderId: this.orderId,
       paymentId: this.paymentId
     })
 
-    this.store.select('order').subscribe((res)=>{
-      console.log("status",res.order.orderStatus);
+    this.store.select('payment').subscribe((res)=>{
+      console.log("status",res);
       
       this.order = res.order
       this.orderItems  = res.order.orderItems
       this.address = res.order.shippingAddress
+      this.status=res.order.orderStatus
     })
   }
 
